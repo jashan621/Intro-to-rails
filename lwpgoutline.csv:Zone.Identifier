@@ -1,0 +1,4 @@
+[ZoneTransfer]
+ZoneId=3
+ReferrerUrl=https://canwinmap.ad.umanitoba.ca/layers/geoserver:geonode:lwpgoutline/metadata_detail
+HostUrl=https://canwinmap.ad.umanitoba.ca/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&typename=geonode%3Alwpgoutline&outputFormat=csv&srs=EPSG%3A3978

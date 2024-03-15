@@ -1,0 +1,27 @@
+<div class="container">
+  <h1 class="mt-5"><%= @lake.name %></h1>
+
+  <div class="row mt-4">
+    <div class="col-md-6">
+      <p><strong>Description:</strong> <%= @lake.description %></p>
+      <p><strong>Area:</strong> <%= @lake.area %> km²</p>
+      <p><strong>Access:</strong> <%= @lake.access %></p>
+    </div>
+    <div class="col-md-6">
+      <h2>Data Sources</h2>
+      <% if @data_sources.present? %>
+        <% @data_sources.each do |data_source| %>
+          <p><strong>DOI:</strong> <%= data_source.DOI %></p>
+          <p><strong>Monitoring Location ID:</strong> <%= data_source.MonitoringLocationID %></p>
+          <p><strong>Latitude:</strong> <%= data_source.MonitoringLocationLatitude %></p>
+          <p><strong>Longitude:</strong> <%= data_source.MonitoringLocationLongitude %></p>
+          <p><strong>Horizontal Coordinate Reference System:</strong> <%= data_source.MonitoringLocationHorizontalCoordinateReferenceSystem %></p>
+          <!-- Add more fields as needed -->
+          <hr>
+        <% end %>
+      <% else %>
+        <p>No data sources found for this lake.</p>
+      <% end %>
+    </div>
+  </div>
+</div>
