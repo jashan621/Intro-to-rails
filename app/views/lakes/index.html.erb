@@ -10,12 +10,13 @@
     <% end %>
   </div>
   <div class="col-md-6">
-    <%= form_tag(lakes_path, method: "get", class: "d-flex") do %>
-      <%= hidden_field_tag :fuzzy, true %>
-      <%= text_field_tag(:hierarchical_search, params[:search], placeholder: "Lake Hierarchical Search", class: "form-control me-2") %>
-      <%= submit_tag("Search", class: "btn btn-primary") %>
-    <% end %>
-  </div>
+  <%= form_tag(lakes_path, method: "get", class: "d-flex") do %>
+    <div class="input-group">
+      <%= select_tag(:category_id, options_for_select(Category.all.map { |category| [category.name, category.id] }, params[:category_id]), { include_blank: "All Categories", class: "form-select me-2" }) %>
+      <button type="submit" class="btn btn-primary">Search</button>
+    </div>
+  <% end %>
+</div>
 </div>
 
 <table class="table table-striped">
